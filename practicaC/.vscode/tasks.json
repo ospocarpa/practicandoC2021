@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Make",
+            "type": "shell",
+            "command": "make",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "PracticaC Normal",
+
+            "type": "shell",
+            "command": "./exec"
+        },
+        {
+            "label": "PracticaC Valgrind",
+            "type": "shell",
+            "command": "./vexec" 
+        },
+        {
+            "label": "PracticaC Helgrind",
+            "type": "shell",
+            "command": "./hexec"
+        }
+    ]
+}
