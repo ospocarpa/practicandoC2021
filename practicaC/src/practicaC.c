@@ -1,18 +1,36 @@
 #include "practicaC.h"
 
+#define MAX(X, Y) X > Y ? X : Y
+#define MIN(X, Y) X < Y ? X : Y
+
 int main()
 {
-    // pasar de aaaammdd a : aniio , mes, dia
-    long fec;
-    int dia, mes, anio;
-    printf("Ingrese una fecha(aaaaammdd)\n");
-    scanf("%ld", &fec);
-    anio = fec / 10000;
-    int res = fec % 10000;
-    mes = res / 100;
-    dia = res % 100;
+    // ingrese 3 valores distintos
 
-    printf("Dia:  %d\n", dia);
-    printf("Mes:  %d\n", mes);
-    printf("Anio: %d\n", anio);
+    int a, b, c, mayor, medio, menor;
+    printf("Ingrese 3 valores distintos \n");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a > b && a > c)
+    {
+        mayor = a;
+        medio = MAX(b, c);
+        menor = MIN(b, c);
+    }
+    else if (b > a && b > c)
+    {
+        mayor = b;
+        medio = MAX(a, c);
+        menor = MIN(a, c);
+    }
+    else
+    {
+        mayor = c;
+        medio = MAX(a, b);
+        menor = MIN(a, b);
+    }
+
+    printf("Mayor: %d\n", mayor);
+    printf("Medio: %d\n", medio);
+    printf("Menor: %d\n", menor);
 }
