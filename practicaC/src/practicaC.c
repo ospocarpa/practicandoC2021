@@ -1,23 +1,14 @@
 #include "practicaC.h"
 
-
-
 int main()
 {
-    // Mostrar los primeros n primos
+    // Punteros y direcciones de memoria
 
-    int n;
-    int i = 2;
-    printf("Ingrese un numero\n");
-    scanf("%d", &n);
+    int n = 12;
+    int *p;
+    p = &n;
+    *p = 15;
+    printf("n:%d\n", n);
 
-    for (int j = 0; j < n; j++)
-    {
-        while (!esPrimo(i))
-        {
-            i++;
-        }
-        printf("%dºprimo:%d\t", j + 1, i);
-        i++;
-    }
+    return 0;
 }
