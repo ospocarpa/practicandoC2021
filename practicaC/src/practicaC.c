@@ -1,36 +1,39 @@
 #include "practicaC.h"
-
-#define MAX(X, Y) X > Y ? X : Y
-#define MIN(X, Y) X < Y ? X : Y
+#include "string.h"
 
 int main()
 {
-    // ingrese 3 valores distintos
+    // Dia de la semana (usando case)
 
-    int a, b, c, mayor, medio, menor;
-    printf("Ingrese 3 valores distintos \n");
-    scanf("%d %d %d", &a, &b, &c);
+    int nd;
+    char dia[10];
+    printf("Ingrese un dia de la semana\n");
+    scanf("%d", &nd);
 
-    if (a > b && a > c)
+    switch (nd)
     {
-        mayor = a;
-        medio = MAX(b, c);
-        menor = MIN(b, c);
-    }
-    else if (b > a && b > c)
-    {
-        mayor = b;
-        medio = MAX(a, c);
-        menor = MIN(a, c);
-    }
-    else
-    {
-        mayor = c;
-        medio = MAX(a, b);
-        menor = MIN(a, b);
+    case 1:
+        strcpy(dia, "Lunes");
+        break;
+    case 2:
+        strcpy(dia, "Martes");
+        break;
+    case 3:
+        strcpy(dia, "Miercoles");
+        break;
+    case 4:
+        strcpy(dia, "Jueves");
+        break;
+    case 5:
+        strcpy(dia, "Viernes");
+        break;
+    case 6:
+        strcpy(dia, "Sabado");
+        break;
+    case 7:
+        strcpy(dia, "Domingo");
+        break;
     }
 
-    printf("Mayor: %d\n", mayor);
-    printf("Medio: %d\n", medio);
-    printf("Menor: %d\n", menor);
+    printf("Dia de la semana %d:%s\n", nd, dia);
 }
