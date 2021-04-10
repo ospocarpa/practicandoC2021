@@ -17,6 +17,9 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "preLaunchTask": "Make",
+            "sourceFileMap": {
+                 "/build/glibc-ViVLyQ": "/usr/src/glibc"
+              },
             "setupCommands": [
                 {
                     "description": "Habilitar la impresión con sangría para gdb",
@@ -27,3 +30,6 @@
         }
     ]
 }
+    "sourceFileMap": {
+                "/build/glibc-ViVLyQ": "/usr/src/glibc"
+            },
