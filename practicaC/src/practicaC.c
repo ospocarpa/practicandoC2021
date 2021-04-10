@@ -1,39 +1,29 @@
 #include "practicaC.h"
-#include "string.h"
 
 int main()
 {
-    // Dia de la semana (usando case)
+    // es primo ?
 
-    int nd;
-    char dia[10];
-    printf("Ingrese un dia de la semana\n");
-    scanf("%d", &nd);
+    int n;
 
-    switch (nd)
+    printf("Ingrese un numero\n");
+    scanf("%d", &n);
+    int esPrimo = n < 2 ? 0 : 1; // 0 = false
+    for (int i = 2; i < n && esPrimo; i++)
     {
-    case 1:
-        strcpy(dia, "Lunes");
-        break;
-    case 2:
-        strcpy(dia, "Martes");
-        break;
-    case 3:
-        strcpy(dia, "Miercoles");
-        break;
-    case 4:
-        strcpy(dia, "Jueves");
-        break;
-    case 5:
-        strcpy(dia, "Viernes");
-        break;
-    case 6:
-        strcpy(dia, "Sabado");
-        break;
-    case 7:
-        strcpy(dia, "Domingo");
-        break;
+        if (n % i == 0)
+        {
+            esPrimo = 0;
+        }
     }
 
-    printf("Dia de la semana %d:%s\n", nd, dia);
+    if (esPrimo)
+    {
+        printf("%d Es primo\n", n);
+    }
+    else
+    {
+
+        printf("%d No es primo\n", n);
+    }
 }
