@@ -1,13 +1,7 @@
 #include "practicaC.h"
 
-int main()
+int esPrimo(int n)
 {
-    // es primo ?
-
-    int n;
-
-    printf("Ingrese un numero\n");
-    scanf("%d", &n);
     int esPrimo = n < 2 ? 0 : 1; // 0 = false
     for (int i = 2; i < n && esPrimo; i++)
     {
@@ -16,14 +10,25 @@ int main()
             esPrimo = 0;
         }
     }
+    return esPrimo;
+}
 
-    if (esPrimo)
-    {
-        printf("%d Es primo\n", n);
-    }
-    else
-    {
+int main()
+{
+    // Mostrar los primeros n primos
 
-        printf("%d No es primo\n", n);
+    int n;
+    int i = 2;
+    printf("Ingrese un numero\n");
+    scanf("%d", &n);
+
+    for (int j = 0; j < n; j++)
+    {
+        while (!esPrimo(i))
+        {
+            i++;
+        }
+        printf("%dºprimo:%d\t", j + 1, i);
+        i++;
     }
 }
