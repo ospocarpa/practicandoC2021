@@ -1,14 +1,18 @@
 #include "practicaC.h"
 
+void permutar(int *a, int *b)
+{
+    int aux = *a;
+    *a = *b;
+    *b = aux;
+}
+
 int main()
 {
-    // Punteros y direcciones de memoria
+    // Permutar (funcion pasando direccion de memoria de los argumentos)
 
-    int n = 12;
-    int *p;
-    p = &n;
-    *p = 15;
-    printf("n:%d\n", n);
-
-    return 0;
+    int x = 5, y = 2;
+    printf("Antes de permutar:x=%d\ty=%d\n", x, y);
+    permutar(&x, &y);
+    printf("Despues de permutar:x=%d\ty=%d\n", x, y);
 }
