@@ -59,5 +59,13 @@ int factorizar(int n, int *factor, int *temp)
 
     return *temp >= 1;
 }
+// funcion que utiliza una variable estatica para retornar
+// en cada invocacion el siguiente numero natural
+int siguienteNumero()
+{
+    static int n = 0;
+    n++;
+    return n;
+}
 
 #endif

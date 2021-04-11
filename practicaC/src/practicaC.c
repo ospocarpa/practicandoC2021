@@ -2,18 +2,11 @@
 
 int main()
 {
-    // factorizar (n) devuelve sus factores
-
-    int n;
-    printf("Ingrese un numero\n");
-    scanf("%d", &n);
-    int aux = 0;
-    int factor = 2;
-    printf("Factores de %d\n", n);
-    while (factorizar(n, &factor, &aux))
+    // funcion que utiliza una variable estatica para retornar
+    // en cada invocacion el siguiente numero natural
+    // int siguienteNumero();
+    for (int i = 0; i < 10; i++)
     {
-        printf("factor:%d\t", factor);
+        printf("%d\n", siguienteNumero());
     }
-
-    return 0;
 }
