@@ -2,11 +2,12 @@
 
 int main()
 {
-    // tipo char
-    char c = 'A';
-    printf("Como caracter:%c\n", c);
-    printf("Valor numerico ASCII:%d\n", c);
-    int i = 65;
-    printf("Como caracter:%c\n", i);
-    printf("Valor numerico ASCII:%d\n", i);
+    // inicializando cadenas : "pablo","juan",{0}
+    char s[10] = "Pablo"; // longitud:5 ,almacena:5+1 caracteres y
+    // utiliza 5+1 bytes de memoria (capacidad=10)
+    char t[] = "Juan";
+    char w[10] = {0};
+    printf("s = [%s]\n", s);
+    printf("t = [%s]\n", t);
+    printf("w= [%s]\n", w);
 }
