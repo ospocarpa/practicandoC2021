@@ -2,11 +2,14 @@
 
 int main()
 {
-    // funcion que utiliza una variable estatica para retornar
-    // en cada invocacion el siguiente numero natural
-    // int siguienteNumero();
-    for (int i = 0; i < 10; i++)
+    //factorizar con static
+    //int factorizar(n,int* factor)
+    int n, factor;
+    printf("Ingrese un numero\n");
+    scanf("%d", &n);
+    printf("Factores de %d\n", n);
+    while (factorizar(n, &factor))
     {
-        printf("%d\n", siguienteNroPrimo());
+        printf("%d\t", factor);
     }
 }

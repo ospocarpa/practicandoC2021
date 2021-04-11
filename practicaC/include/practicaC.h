@@ -58,19 +58,35 @@ int siguienteNroPrimo()
 }
 
 // n=60;
-int factorizar(int n, int *factor, int *temp)
+// int factorizar(int n, int *factor, int *temp)
+// {
+//     *temp = *temp == 0 ? n : *temp;
+//     int i = 2;
+//     while (*temp % i != 0 && i <= *temp)
+//     {
+//         i++;
+//     }
+//     *temp = *temp / i;
+//     *factor = i;
+
+//     return *temp >= 1;
+// }
+//factorizar con modificador statics
+int factorizar(int n, int *factor)
 {
-    *temp = *temp == 0 ? n : *temp;
+    static int temp = 0;
+    temp = temp == 0 ? n : temp;
     int i = 2;
-    while (*temp % i != 0 && i <= *temp)
+    while (temp % i != 0 && i <= temp)
     {
         i++;
     }
-    *temp = *temp / i;
+    temp = temp / i;
     *factor = i;
 
-    return *temp >= 1;
+    return temp >= 1;
 }
+
 // funcion que utiliza una variable estatica para retornar
 // en cada invocacion el siguiente numero natural
 int siguienteNumero()
