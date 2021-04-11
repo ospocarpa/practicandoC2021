@@ -2,18 +2,18 @@
 
 int main()
 {
-    //funciones que mantienen su estado
-    // int siguienteNroPrimo(int* temp);
-    //Ingrese los primeros n primos
+    // factorizar (n) devuelve sus factores
 
     int n;
     printf("Ingrese un numero\n");
     scanf("%d", &n);
     int aux = 0;
-    for (int i = 0; i < n; i++)
+    int factor = 2;
+    printf("Factores de %d\n", n);
+    while (factorizar(n, &factor, &aux))
     {
-        aux = siguienteNroPrimo(&aux);
-        printf("%dºprimo:%d\t", i + 1, aux);
+        printf("factor:%d\t", factor);
     }
+
     return 0;
 }

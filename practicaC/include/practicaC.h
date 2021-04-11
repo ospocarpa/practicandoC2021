@@ -45,5 +45,19 @@ int siguienteNroPrimo(int *temp)
     }
     return *temp;
 }
+// n=60;
+int factorizar(int n, int *factor, int *temp)
+{
+    *temp = *temp == 0 ? n : *temp;
+    int i = 2;
+    while (*temp % i != 0 && i <= *temp)
+    {
+        i++;
+    }
+    *temp = *temp / i;
+    *factor = i;
+
+    return *temp >= 1;
+}
 
 #endif
