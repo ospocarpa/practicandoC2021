@@ -2,14 +2,11 @@
 
 int main()
 {
-    //factorizar con static
-    //int factorizar(n,int* factor)
-    int n, factor;
-    printf("Ingrese un numero\n");
-    scanf("%d", &n);
-    printf("Factores de %d\n", n);
-    while (factorizar(n, &factor))
-    {
-        printf("%d\t", factor);
-    }
+    // tipo char
+    char c = 'A';
+    printf("Como caracter:%c\n", c);
+    printf("Valor numerico ASCII:%d\n", c);
+    int i = 65;
+    printf("Como caracter:%c\n", i);
+    printf("Valor numerico ASCII:%d\n", i);
 }
