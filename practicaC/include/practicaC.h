@@ -35,16 +35,28 @@ int esPrimo(int n)
     return esPrimo;
 }
 
-int siguienteNroPrimo(int *temp)
-{
-    *temp = *temp + 1;
+// int siguienteNroPrimo(int *temp)
+// {
+//     *temp = *temp + 1;
 
-    while (!esPrimo(*temp))
+//     while (!esPrimo(*temp))
+//     {
+//         ++*temp;
+//     }
+//     return *temp;
+// }
+//siguiente numeroprimo con variable estatica
+int siguienteNroPrimo()
+{
+    static int temp = 1;
+    temp++;
+    while (!esPrimo(temp))
     {
-        ++*temp;
+        temp++;
     }
-    return *temp;
+    return temp;
 }
+
 // n=60;
 int factorizar(int n, int *factor, int *temp)
 {

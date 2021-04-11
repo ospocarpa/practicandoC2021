@@ -7,6 +7,6 @@ int main()
     // int siguienteNumero();
     for (int i = 0; i < 10; i++)
     {
-        printf("%d\n", siguienteNumero());
+        printf("%d\n", siguienteNroPrimo());
     }
 }
