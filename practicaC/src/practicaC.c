@@ -2,12 +2,14 @@
 
 int main()
 {
-    // inicializando cadenas : "pablo","juan",{0}
-    char s[10] = "Pablo"; // longitud:5 ,almacena:5+1 caracteres y
-    // utiliza 5+1 bytes de memoria (capacidad=10)
-    char t[] = "Juan";
-    char w[10] = {0};
-    printf("s = [%s]\n", s);
-    printf("t = [%s]\n", t);
-    printf("w= [%s]\n", w);
+
+    char s[] = "12345";
+    long n = cadenaAEntero(s);
+    printf("Cadena = [%s]\n", s);
+    printf("Numero = [%ld]\n", n);
+    printf("\n%d\n", potencia(2, 4));
+    printf("\n%lf\n", pow(2.2, 4.0));
+    printf("\n---------------\n");
+    printf("A10(16)->(10):%ld\n", cadenaAEnteroB("A10", 16));
+    return 0;
 }

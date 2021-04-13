@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include "shared_utils.h"
 #include "string.h"
+#include <math.h>
 
 void dividirFecha(long f, int *d, int *m, int *a)
 {
@@ -95,5 +96,52 @@ int siguienteNumero()
     n++;
     return n;
 }
+int longitud(char s[])
+{
+    int i = 0;
+    while (s[i] != '\0')
+    {
+        i++;
+    }
+    return i;
+}
 
+int potencia(int base, int expo)
+{ //b=3  e=4
+    int ret = 1;
+    for (int i = 0; i < expo; i++)
+    { // 3*3*3*3=81
+        ret *= base;
+    }
+    return ret;
+}
+
+long cadenaAEntero(char s[])
+{
+    int n = longitud(s);
+    long ret = 0;
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        ret = ret + (s[i] - '0') * potencia(10, n - i - 1);
+    }
+
+    return ret;
+}
+long cadenaAEnteroB(char s[], int base)
+{
+    int n = longitud(s);
+    long ret = 0;
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        if (s[i] - '0' > 9)
+        {
+            ret = ret + (s[i] - 'A' + 10) * potencia(base, n - i - 1);
+        }
+        else
+        {
+            ret = ret + (s[i] - '0') * potencia(base, n - i - 1);
+        }
+    }
+    return ret;
+}
 #endif
