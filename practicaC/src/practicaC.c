@@ -2,16 +2,24 @@
 
 int main()
 {
+    int v;
 
-    // char a[] = "Esto es una cadena";
-    // char b[] = "Es";
-    // char c[] = "an";
-    // char z[] = "ena";
-    // printf("[%s] es prefijo de [%s]? %d\n", b, a, esPrefijo(a, b));
-    // printf("[%s] es prefijo de [%s]? %d\n", c, a, esPrefijo(a, c));
-    // printf("[%s] es sufijo de [%s]? %d\n", z, a, esSufijo(a, z));
-
-    printf("[%s]\n", obtenerSaludo());
-
+    int a[10];
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Ingrese un valor entero\n");
+        scanf("%d", &v);
+        a[i] = v;
+    }
+    printf("Orden original: \n");
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\nOrden inverso: \n");
+    for (int i = 9; i >= 0; i--)
+    {
+        printf("%d ", a[i]);
+    }
     return 0;
 }

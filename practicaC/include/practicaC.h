@@ -6,7 +6,7 @@
 #include "shared_utils.h"
 #include <string.h>
 #include <math.h>
-#include <stdlib.h
+#include <stdlib.h>
 
 void dividirFecha(long f, int *d, int *m, int *a)
 {
