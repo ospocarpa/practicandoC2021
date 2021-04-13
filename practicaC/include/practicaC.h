@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "shared_utils.h"
-#include "string.h"
+#include <string.h>
 #include <math.h>
 
 void dividirFecha(long f, int *d, int *m, int *a)
@@ -154,5 +154,14 @@ void recibePuntero(char *x)
     printf("x = %s\n", x);
     printf("x[3] = %c \n", x[3]);
 }
-
+int esPrefijo(char s[], char p[])
+{
+    int n = strlen(p);
+    return strncmp(s, p, n) == 0;
+}
+int esSufijo(char s[], char p[])
+{
+    int desde = strlen(s) - strlen(p);
+    return strcmp(s + desde, p) == 0;
+}
 #endif

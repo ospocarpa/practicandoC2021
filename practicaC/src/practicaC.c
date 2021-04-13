@@ -3,11 +3,13 @@
 int main()
 {
 
-    char s[] = "Esto es una cadena";
-    printf("[%s]\n", s);
-    printf("[%s]\n", s + 5);
-    printf("[%s]\n", s + 7);
-    printf("[%s]\n", s + 9);
-    printf("[%s]\n", s + 12);
+    char a[] = "Esto es una cadena";
+    char b[] = "Es";
+    char c[] = "an";
+    char z[] = "ena";
+    printf("[%s] es prefijo de [%s]? %d\n", b, a, esPrefijo(a, b));
+    printf("[%s] es prefijo de [%s]? %d\n", c, a, esPrefijo(a, c));
+    printf("[%s] es sufijo de [%s]? %d\n", z, a, esSufijo(a, z));
+
     return 0;
 }
