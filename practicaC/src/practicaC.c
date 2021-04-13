@@ -2,24 +2,24 @@
 
 int main()
 {
-    int v;
+    // creando arrays dinamicamente
+    int n;
+    printf("Ingrese un entero para dimensionar un array\n");
+    scanf("%d", &n);
+    int *sArr;
+    sArr = (int *)malloc(sizeof(int) * n);
 
-    int a[10];
-    for (int i = 0; i < 10; i++)
+    // inicializamos los valores
+    for (int i = 0; i < n; i++)
     {
-        printf("Ingrese un valor entero\n");
-        scanf("%d", &v);
-        a[i] = v;
+        printf("Numero: ");
+        scanf("%d", &sArr[i]);
     }
-    printf("Orden original: \n");
-    for (int i = 0; i < 10; i++)
+    // sArr[n] = '\0';
+    // mostramos los valores
+    for (int i = 0; i < n; i++)
     {
-        printf("%d ", a[i]);
-    }
-    printf("\nOrden inverso: \n");
-    for (int i = 9; i >= 0; i--)
-    {
-        printf("%d ", a[i]);
+        printf("%d ", sArr[i]);
     }
     return 0;
 }
