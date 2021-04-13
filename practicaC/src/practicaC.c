@@ -2,26 +2,26 @@
 
 int main()
 {
-    // creando arrays dinamicamente de tipo char*
-    int n;
-    printf("Ingrese un entero para dimensionar un array\n");
-    scanf("%d", &n);
-    char *h;
 
-    char *sArr = (char *)malloc(n);
+    // ingresar 5 cadenas : {casa,auto,persona,arbol,sol}
+    // imprimir en orden inverso
 
-    // inicializamos los valores
-    scanf("%s", h);
-    for (int i = 0; i < n; i++)
+    char *cadenas[5];   // el array de cadenas
+    char cadenaAux[10]; // una cadena auxiliar para leer
+
+    for (int i = 0; i < 5; i++)
     {
+        printf("Ingrese una palabra\n");
+        scanf("%s", &cadenaAux);
+        //creo una nueva cadena y asigno su direccion a cadenas[i]
+        cadenas[i] = (char *)malloc(sizeof(cadenaAux) + 1);
 
-        sArr[i] = h[i];
+        strcpy(cadenas[i], cadenaAux);
     }
-    // sArr[n] = '\0';
-    // mostramos los valores
-    for (int i = 0; i < n; i++)
+    printf("Orden inverso:\n");
+    for (int i = 4; i >= 0; i--)
     {
-        printf("%c ", sArr[i]);
+        printf("%s\n", cadenas[i]);
     }
     return 0;
 }
