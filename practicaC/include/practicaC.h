@@ -144,4 +144,15 @@ long cadenaAEnteroB(char s[], int base)
     }
     return ret;
 }
+void recibeArray(char x[])
+{
+    printf("x = %s\n", x);
+    printf("x[3] = %c \n", x[3]);
+}
+void recibePuntero(char *x)
+{
+    printf("x = %s\n", x);
+    printf("x[3] = %c \n", x[3]);
+}
+
 #endif
