@@ -6,6 +6,7 @@
 #include "shared_utils.h"
 #include <string.h>
 #include <math.h>
+#include <stdlib.h
 
 void dividirFecha(long f, int *d, int *m, int *a)
 {
@@ -164,4 +165,14 @@ int esSufijo(char s[], char p[])
     int desde = strlen(s) - strlen(p);
     return strcmp(s + desde, p) == 0;
 }
+
+char *obtenerSaludo()
+{
+    char s[] = "Hola mundo";
+    int n = strlen(s);
+    char *r = (char *)malloc(n + 1);
+    stpcpy(r, s);
+    return r;
+}
+
 #endif
