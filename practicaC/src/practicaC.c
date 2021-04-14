@@ -1,27 +1,43 @@
 #include "practicaC.h"
+void inicializarContadores(int s[])
+{
+    for (int i = 0; i < 100; i++)
+    {
+        s[i] = 0;
+    }
+}
+
+void mostrarResultados(int s[])
+{
+    printf("Mostrando resultados \n");
+    for (int i = 0; i < 100; i++)
+    {
+        if (s[i] > 0)
+        {
+            printf("%d aparece  %d veces\n", i, s[i]);
+        }
+    }
+}
 
 int main()
 {
 
-    // ingresar 5 cadenas : {casa,auto,persona,arbol,sol}
-    // imprimir en orden inverso
-
-    char *cadenas[5];   // el array de cadenas
-    char cadenaAux[10]; // una cadena auxiliar para leer
-
-    for (int i = 0; i < 5; i++)
+    // Dado un cjto de numeros enteros ,entre 0 -99
+    // Informar cuantas, veces aparece cada uno
+    // A = {6,2,8,1,6,1,3,2,1,2,8,3,1}
+    int s[100];
+    inicializarContadores(s);
+    int n;
+    printf("Ingrese un entero 0-99\n");
+    scanf("%d", &n);
+    while (n >= 0)
     {
-        printf("Ingrese una palabra\n");
-        scanf("%s", &cadenaAux);
-        //creo una nueva cadena y asigno su direccion a cadenas[i]
-        cadenas[i] = (char *)malloc(sizeof(cadenaAux) + 1);
+        s[n]++;
+        printf("Ingrese un entero 0-99\n");
+        scanf("%d", &n);
+    }
 
-        strcpy(cadenas[i], cadenaAux);
-    }
-    printf("Orden inverso:\n");
-    for (int i = 4; i >= 0; i--)
-    {
-        printf("%s\n", cadenas[i]);
-    }
+    mostrarResultados(s);
+
     return 0;
 }
