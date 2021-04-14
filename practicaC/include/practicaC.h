@@ -175,4 +175,31 @@ char *obtenerSaludo()
     return r;
 }
 
+void inicializarContadores(int s[])
+{
+    for (int i = 0; i < 100; i++)
+    {
+        s[i] = 0;
+    }
+}
+
+void mostrarResultados(int s[])
+{
+    printf("Mostrando resultados \n");
+    for (int i = 0; i < 100; i++)
+    {
+        if (s[i] > 0)
+        {
+            printf("%d aparece  %d veces\n", i, s[i]);
+        }
+    }
+}
+
+int agregar(int arr[], int *len, int v)
+{
+    arr[*len] = v;
+    (*len)++;
+    return *len - 1;
+}
+
 #endif
