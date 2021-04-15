@@ -201,5 +201,27 @@ int agregar(int arr[], int *len, int v)
     (*len)++;
     return *len - 1;
 }
+int buscar(int arr[], int len, int v)
+{
+    int i;
+    for (i = 0; i < len && arr[i] != v; i++)
+        ;
+    return i < len ? i : -1;
+}
+
+int buscarYAgregar(int arr[], int *len, int v, int *enc)
+{
+    int pos = buscar(arr, *len, v);
+    if (pos >= 0)
+    {
+        *enc = 1;
+    }
+    else
+    {
+        pos = agregar(arr, len, v);
+        *enc = 0;
+    }
+    return pos;
+}
 
 #endif
