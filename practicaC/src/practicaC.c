@@ -18,7 +18,7 @@ int main(void)
     strcpy(p->nombre, "Esteban");
     strcpy(p->apellido, "Lupi");
     p->edad = 26;
-    p->hijo = malloc(sizeof(t_persona));
+
     printf("\nNombre:%s\nApellido:%s\nEdad:%d\n", p->nombre, p->apellido, p->edad);
     printf("Creamos al hijo de esteban\n");
     printf("_---------------\n");
@@ -33,4 +33,7 @@ int main(void)
     printf("_---------------\n");
     printf("\nnombre:%s\nApellido:%s\nEdad:%d\nHijo:%p", nene->nombre, nene->apellido, nene->edad, nene->hijo);
     printf("\nLa direccion de nene es %p\n", nene);
+    free(nene);
+
+    free(p);
 }
