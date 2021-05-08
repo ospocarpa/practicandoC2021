@@ -5,18 +5,19 @@
 #include <commons/log.h>
 #include <commons/string.h>
 
-//desrefenrencia :cambia el valor de i=1 a i=2 por punteros
-//mostrar valores antes y despues
+void sumarUno(int *unaVariable)
+{
+    *unaVariable = *unaVariable + 1;
+    printf("Dentro de la funcion, i vale: %d\n", *unaVariable);
+}
+
 int main(void)
 {
-    int i = 4;
-    int *p = malloc(sizeof(int));
-    p = &i;
-    printf("Antes i vale:%d\n", i);
-    *p = 2;
-    printf("Ahora i vale:%d\n", *p);
-    t_log *logger = log_create("cfg/practicaC.log", "PRACTICAC", 1, LOG_LEVEL_INFO);
-    log_info(logger, "Usando la shared\n");
-    log_destroy(logger);
-    //free(p);
+    int i = 1;
+
+    printf("Antes de ejecutar la funcion, i vale: %d\n", i);
+    sumarUno(&i);
+    printf("Despues de ejecutar la funcion, i vale: %d\n", i);
+
+    return 0;
 }
