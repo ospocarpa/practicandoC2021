@@ -10,13 +10,14 @@ typedef struct
     char nombre[20];
     char apellido[20];
     int edad;
+    t_persona *hijo;
 } t_persona;
-
 int main(void)
 {
     t_persona *p = malloc(sizeof(t_persona));
     strcpy(p->nombre, "Esteban");
-    strcpy(p->apellido, "Trabajos");
-    p->edad = 56;
+    strcpy(p->apellido, "Lupi");
+    p->edad = 26;
+    p->hijo = NULL;
     printf("\nNombre:%s\nApellido:%s\nEdad:%d\n", p->nombre, p->apellido, p->edad);
 }
