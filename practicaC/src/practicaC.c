@@ -20,5 +20,9 @@ int main(void)
     nombres[2] = copiar("Santiago"); //8 + 1 chars
     nombres[3] = copiar("Gaston");   //6 + 1 chars
 
-    //free(nombres);
+    for (int i = 0; i < 4; i++)
+    {
+        free(nombres[i]);
+    }
+    free(nombres);
 }
