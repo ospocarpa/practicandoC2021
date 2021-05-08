@@ -1,39 +1,24 @@
 #include "practicaC.h"
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <commons/log.h>
-#include <commons/string.h>
-
-typedef struct
+char *copiar(char *palabra)
 {
-    char nombre[20];
-    char apellido[20];
-    int edad;
-    struct t_persona *hijo;
-} t_persona;
+    char *tmp = malloc(sizeof(char) * strlen(palabra) + 1);
+    memcpy(tmp, palabra, strlen(palabra));
+    tmp[strlen(palabra)] = '\0';
+    return tmp;
+}
+
 int main(void)
 {
-    t_persona *p = malloc(sizeof(t_persona));
-    strcpy(p->nombre, "Esteban");
-    strcpy(p->apellido, "Lupi");
-    p->edad = 26;
+    char **nombres;
+    //Grabo espacio para 4 punteros a nombres
+    nombres = malloc(sizeof(char *) * 4);
 
-    printf("\nNombre:%s\nApellido:%s\nEdad:%d\n", p->nombre, p->apellido, p->edad);
-    printf("Creamos al hijo de esteban\n");
-    printf("_---------------\n");
-    t_persona *nene = malloc(sizeof(t_persona));
-    strcpy(nene->nombre, "nico");
-    strcpy(nene->apellido, "Lupi");
-    nene->edad = 1;
-    nene->hijo = NULL;
-    p->hijo = nene;
-    printf("_---------------\n");
-    printf("\nNombre:%s\nApellido:%s\nEdad:%d\nHijo:%p", p->nombre, p->apellido, p->edad, p->hijo);
-    printf("_---------------\n");
-    printf("\nnombre:%s\nApellido:%s\nEdad:%d\nHijo:%p", nene->nombre, nene->apellido, nene->edad, nene->hijo);
-    printf("\nLa direccion de nene es %p\n", nene);
-    free(nene);
+    //Grabo cada una de las palabras
+    nombres[0] = copiar("Joaquin");  //7 + 1 chars
+    nombres[1] = copiar("Matias");   //6 + 1 chars
+    nombres[2] = copiar("Santiago"); //8 + 1 chars
+    nombres[3] = copiar("Gaston");   //6 + 1 chars
 
-    free(p);
+    //free(nombres);
 }
