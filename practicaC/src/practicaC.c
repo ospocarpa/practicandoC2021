@@ -5,19 +5,18 @@
 #include <commons/log.h>
 #include <commons/string.h>
 
-void sumarUno(int *unaVariable)
+typedef struct
 {
-    *unaVariable = *unaVariable + 1;
-    printf("Dentro de la funcion, i vale: %d\n", *unaVariable);
-}
+    char nombre[20];
+    char apellido[20];
+    int edad;
+} t_persona;
 
 int main(void)
 {
-    int i = 1;
-
-    printf("Antes de ejecutar la funcion, i vale: %d\n", i);
-    sumarUno(&i);
-    printf("Despues de ejecutar la funcion, i vale: %d\n", i);
-
-    return 0;
+    t_persona *p = malloc(sizeof(t_persona));
+    strcpy(p->nombre, "Esteban");
+    strcpy(p->apellido, "Trabajos");
+    p->edad = 56;
+    printf("\nNombre:%s\nApellido:%s\nEdad:%d\n", p->nombre, p->apellido, p->edad);
 }
